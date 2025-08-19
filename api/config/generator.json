@@ -1,5 +1,5 @@
 {
-  "default_provider": "google",
+  "default_provider": "openai",
   "providers": {
     "dashscope": {
       "default_model": "qwen-plus",
@@ -41,6 +41,9 @@
       }
     },
     "openai": {
+      "initialize_kwargs": {
+        "base_url": "${OPENAI_GEN_BASE_URL}"
+      },
       "default_model": "gpt-4o",
       "supportsCustomModel": true,
       "models": {
@@ -103,7 +106,7 @@
       }
     },
     "ollama": {
-      "default_model": "qwen3:1.7b",
+      "default_model": "qwen3:32b",
       "supportsCustomModel": true,
       "models": {
         "qwen3:1.7b": {
@@ -120,7 +123,7 @@
             "num_ctx": 8000
           }
         },
-        "qwen3:8b": {
+        "qwen3:32b": {
           "options": {
             "temperature": 0.7,
             "top_p": 0.8,

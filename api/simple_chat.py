@@ -477,6 +477,7 @@ This file contains...
 
             # Initialize Openai client
             model = OpenAIClient()
+            #model = OpenAIClient(base_url="${OPENAI_GEN_BASE_URL}")
             model_kwargs = {
                 "model": request.model,
                 "stream": True,
