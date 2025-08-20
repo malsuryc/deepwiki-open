@@ -178,7 +178,8 @@ class OpenAIClient(ModelClient):
         self._api_key = api_key
         self._env_api_key_name = env_api_key_name
         self._env_base_url_name = env_base_url_name
-        self.base_url = "http://10.12.40.107:8080/v1"
+        self.base_url = base_url or os.getenv(self._env_base_url_name)
+        log.info(f"OpenAIClient configured base_url={self.base_url}")
         #self.base_url = base_url or os.getenv(self._env_base_url_name, "http://10.12.40.109:23334/v1")
         self.sync_client = self.init_sync_client()
         self.async_client = None  # only initialize if the async call is called
