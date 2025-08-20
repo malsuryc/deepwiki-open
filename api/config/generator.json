@@ -41,6 +41,7 @@
       }
     },
     "openai": {
+      "client_class": "OpenAIClient",
       "initialize_kwargs": {
         "base_url": "${OPENAI_GEN_BASE_URL}"
       },
